@@ -19,5 +19,20 @@ namespace PlaceMyBetProject.Models
         public Evento evento { get; set; }
         public int apuestaId { get; set; }
         public List<Apuesta> apuestas { get; set; }
+
+        public Mercado(int mercadoId, double overUnder, double dineroOver, double dineroUnder, double cuotaOver, double cuotaUnder, int eventoId)
+        {
+            this.mercadoId = mercadoId;
+            this.overUnder = overUnder;
+            this.dineroOver = dineroOver;
+            this.dineroUnder = dineroUnder;
+            this.cuotaOver = cuotaOver;
+            this.cuotaUnder = cuotaUnder;
+            this.eventoId = eventoId;
+        }
+
+        public Mercado()
+        {
+        }
     }
 }

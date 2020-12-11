@@ -14,5 +14,18 @@ namespace PlaceMyBetProject.Models
 
         public List<Apuesta> apuestas { get; set; }
         public Cuenta cuenta { get; set; }
+
+        public Usuario(string usuarioId, string nombre, string apellido, int edad)
+        {
+            this.usuarioId = usuarioId;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.edad = edad;
+        }
+
+        public Usuario()
+        {
+        }
     }
+
 }

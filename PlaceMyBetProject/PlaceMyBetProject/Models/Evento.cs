@@ -15,5 +15,17 @@ namespace PlaceMyBetProject.Models
 
         // relaciones
         public List<Mercado> mercados { get; set; }
+
+        public Evento(int eventoId, string local, string visitante, DateTime fecha)
+        {
+            this.eventoId = eventoId;
+            this.local = local;
+            this.visitante = visitante;
+            this.fecha = fecha;
+        }
+
+        public Evento()
+        {
+        }
     }
 }
