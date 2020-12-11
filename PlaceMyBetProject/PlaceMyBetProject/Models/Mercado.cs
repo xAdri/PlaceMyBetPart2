@@ -34,4 +34,22 @@ namespace PlaceMyBetProject.Models
         {
         }
     }
+
+    public class MercadoDTO
+    {
+        public double overUnder { get; set; }
+        public double cuotaOver { get; set; }
+        public double cuotaUnder { get; set; }
+
+        public MercadoDTO(double overUnder, double cuotaOver, double cuotaUnder)
+        {
+            this.overUnder = overUnder;
+            this.cuotaOver = cuotaOver;
+            this.cuotaUnder = cuotaUnder;
+        }
+
+        public MercadoDTO()
+        {
+        }
+    }
 }

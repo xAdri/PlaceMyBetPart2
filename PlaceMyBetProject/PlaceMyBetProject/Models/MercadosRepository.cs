@@ -32,5 +32,17 @@ namespace PlaceMyBetProject.Models
             context.Mercado.Add(m);
             context.SaveChanges();
         }
+
+        public static MercadoDTO ToDTO(Mercado m)
+        {
+            return new MercadoDTO(m.overUnder, m.cuotaOver, m.cuotaUnder);
+        }
+
+        public List<MercadoDTO> RetrieveDTO()
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            List<MercadoDTO> mercados = context.Mercado.Select(m => ToDTO(m)).ToList();
+            return mercados;
+        }
     }
 }
