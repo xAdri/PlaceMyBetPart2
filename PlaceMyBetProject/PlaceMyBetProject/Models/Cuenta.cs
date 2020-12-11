@@ -11,10 +11,10 @@ namespace PlaceMyBetProject.Models
         public string nombreBanco { get; set; }
         public double saldo { get; set; }
 
-        public int usuarioId;
+        public string usuarioId;
         public Usuario usuario;
 
-        public Cuenta(string cuentaId, string nombreBanco, double saldo, int usuarioId)
+        public Cuenta(string cuentaId, string nombreBanco, double saldo, string usuarioId)
         {
             this.cuentaId = cuentaId;
             this.nombreBanco = nombreBanco;

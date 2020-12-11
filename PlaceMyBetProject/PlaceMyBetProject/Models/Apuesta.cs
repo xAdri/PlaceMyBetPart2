@@ -9,7 +9,7 @@ namespace PlaceMyBetProject.Models
     {
         public int apuestaId { get; set; }
         public double tipoMercado { get; set; }
-        public double tipoApuesta { get; set; }
+        public string tipoApuesta { get; set; }
         public double cuota { get; set; }
         public double dineroApuesta { get; set; }
         public DateTime fecha { get; set; }
@@ -18,10 +18,10 @@ namespace PlaceMyBetProject.Models
         public Evento evento { get; set; }
         public int mercadoId { get; set; }
         public Mercado mercado { get; set; }
-        public int usuarioId { get; set; }
+        public string usuarioId { get; set; }
         public Usuario usuario { get; set; }
 
-        public Apuesta(int apuestaId, double tipoMercado, double tipoApuesta, double cuota, double dineroApuesta, DateTime fecha, int eventoId, int mercadoId, int usuarioId)
+        public Apuesta(int apuestaId, double tipoMercado, string tipoApuesta, double cuota, double dineroApuesta, DateTime fecha, int eventoId, int mercadoId, string usuarioId)
         {
             this.apuestaId = apuestaId;
             this.tipoMercado = tipoMercado;

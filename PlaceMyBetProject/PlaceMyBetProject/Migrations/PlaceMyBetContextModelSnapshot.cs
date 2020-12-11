@@ -38,16 +38,13 @@ namespace PlaceMyBetProject.Migrations
                     b.Property<int>("mercadoId")
                         .HasColumnType("int");
 
-                    b.Property<double>("tipoApuesta")
-                        .HasColumnType("double");
+                    b.Property<string>("tipoApuesta")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<double>("tipoMercado")
                         .HasColumnType("double");
 
-                    b.Property<int>("usuarioId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("usuarioId1")
+                    b.Property<string>("usuarioId")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.HasKey("apuestaId");
@@ -56,9 +53,23 @@ namespace PlaceMyBetProject.Migrations
 
                     b.HasIndex("mercadoId");
 
-                    b.HasIndex("usuarioId1");
+                    b.HasIndex("usuarioId");
 
                     b.ToTable("Apuesta");
+
+                    b.HasData(
+                        new
+                        {
+                            apuestaId = 12,
+                            cuota = 1.8999999999999999,
+                            dineroApuesta = 20.0,
+                            eventoId = 1,
+                            fecha = new DateTime(2020, 12, 11, 13, 22, 41, 994, DateTimeKind.Local).AddTicks(4771),
+                            mercadoId = 100,
+                            tipoApuesta = "over",
+                            tipoMercado = 1.5,
+                            usuarioId = "adriperez@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("PlaceMyBetProject.Models.Cuenta", b =>
@@ -75,6 +86,14 @@ namespace PlaceMyBetProject.Migrations
                     b.HasKey("cuentaId");
 
                     b.ToTable("Cuenta");
+
+                    b.HasData(
+                        new
+                        {
+                            cuentaId = "123456789",
+                            nombreBanco = "Bankia",
+                            saldo = 645.25
+                        });
                 });
 
             modelBuilder.Entity("PlaceMyBetProject.Models.Evento", b =>
@@ -95,6 +114,15 @@ namespace PlaceMyBetProject.Migrations
                     b.HasKey("eventoId");
 
                     b.ToTable("Evento");
+
+                    b.HasData(
+                        new
+                        {
+                            eventoId = 1,
+                            fecha = new DateTime(2020, 12, 11, 13, 22, 41, 962, DateTimeKind.Local).AddTicks(4938),
+                            local = "Valencia",
+                            visitante = "Levante"
+                        });
                 });
 
             modelBuilder.Entity("PlaceMyBetProject.Models.Mercado", b =>
@@ -129,6 +157,19 @@ namespace PlaceMyBetProject.Migrations
                     b.HasIndex("eventoId");
 
                     b.ToTable("Mercado");
+
+                    b.HasData(
+                        new
+                        {
+                            mercadoId = 100,
+                            apuestaId = 0,
+                            cuotaOver = 50.0,
+                            cuotaUnder = 50.0,
+                            dineroOver = 1.8999999999999999,
+                            dineroUnder = 1.8999999999999999,
+                            eventoId = 1,
+                            overUnder = 1.5
+                        });
                 });
 
             modelBuilder.Entity("PlaceMyBetProject.Models.Usuario", b =>
@@ -153,6 +194,15 @@ namespace PlaceMyBetProject.Migrations
                     b.HasIndex("cuentaId");
 
                     b.ToTable("Usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            usuarioId = "adriperez@gmail.com",
+                            apellido = "Perez",
+                            edad = 24,
+                            nombre = "Adri"
+                        });
                 });
 
             modelBuilder.Entity("PlaceMyBetProject.Models.Apuesta", b =>
@@ -171,7 +221,7 @@ namespace PlaceMyBetProject.Migrations
 
                     b.HasOne("PlaceMyBetProject.Models.Usuario", "usuario")
                         .WithMany("apuestas")
-                        .HasForeignKey("usuarioId1");
+                        .HasForeignKey("usuarioId");
                 });
 
             modelBuilder.Entity("PlaceMyBetProject.Models.Mercado", b =>

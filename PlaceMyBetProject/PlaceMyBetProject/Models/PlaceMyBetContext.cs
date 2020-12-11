@@ -36,11 +36,11 @@ namespace PlaceMyBetProject.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*modelBuilder.Entity<Evento>().HasData(new Evento(1, "Valencia", "Levante", DateTime.Now));
-            modelBuilder.Entity<Mercado>().HasData(new Mercado(1000, 1.5, 1.9, 1.9, 50, 50, 1));
+            modelBuilder.Entity<Evento>().HasData(new Evento(1, "Valencia", "Levante", DateTime.Now));
+            modelBuilder.Entity<Mercado>().HasData(new Mercado(100, 1.5, 1.9, 1.9, 50, 50, 1));
             modelBuilder.Entity<Usuario>().HasData(new Usuario("adriperez@gmail.com", "Adri", "Perez", 24));
-            modelBuilder.Entity<Apuesta>().HasData(new Apuesta(12, 1.5, "over", 1.9, 20, DateTime.Now, 1, "adriperez@gmail.com", 1000));
-            modelBuilder.Entity<Cuenta>().HasData(new Cuenta(250.25, "Bankia", "123456789", "adriperez@gmail.com"));*/
+            modelBuilder.Entity<Apuesta>().HasData(new Apuesta(12, 1.5, "over", 1.9, 20, DateTime.Now, 1, 100, "adriperez@gmail.com"));
+            modelBuilder.Entity<Cuenta>().HasData(new Cuenta("123456789", "Bankia", 645.25, "adriperez@gmail.com"));
         }
     }
 }
