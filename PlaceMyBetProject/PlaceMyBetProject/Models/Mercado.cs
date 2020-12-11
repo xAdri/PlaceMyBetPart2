@@ -17,7 +17,6 @@ namespace PlaceMyBetProject.Models
         // relacion de un mercado con muchos eventos
         public int eventoId { get; set; }
         public Evento evento { get; set; }
-        public int apuestaId { get; set; }
         public List<Apuesta> apuestas { get; set; }
 
         public Mercado(int mercadoId, double overUnder, double dineroOver, double dineroUnder, double cuotaOver, double cuotaUnder, int eventoId)

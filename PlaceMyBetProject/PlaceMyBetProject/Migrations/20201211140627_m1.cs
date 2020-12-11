@@ -68,8 +68,7 @@ namespace PlaceMyBetProject.Migrations
                     dineroUnder = table.Column<double>(nullable: false),
                     cuotaOver = table.Column<double>(nullable: false),
                     cuotaUnder = table.Column<double>(nullable: false),
-                    eventoId = table.Column<int>(nullable: false),
-                    apuestaId = table.Column<int>(nullable: false)
+                    eventoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -128,7 +127,7 @@ namespace PlaceMyBetProject.Migrations
             migrationBuilder.InsertData(
                 table: "Evento",
                 columns: new[] { "eventoId", "fecha", "local", "visitante" },
-                values: new object[] { 1, new DateTime(2020, 12, 11, 13, 22, 41, 962, DateTimeKind.Local).AddTicks(4938), "Valencia", "Levante" });
+                values: new object[] { 1, new DateTime(2020, 12, 11, 15, 6, 26, 365, DateTimeKind.Local).AddTicks(6649), "Valencia", "Levante" });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
@@ -137,13 +136,13 @@ namespace PlaceMyBetProject.Migrations
 
             migrationBuilder.InsertData(
                 table: "Mercado",
-                columns: new[] { "mercadoId", "apuestaId", "cuotaOver", "cuotaUnder", "dineroOver", "dineroUnder", "eventoId", "overUnder" },
-                values: new object[] { 100, 0, 50.0, 50.0, 1.8999999999999999, 1.8999999999999999, 1, 1.5 });
+                columns: new[] { "mercadoId", "cuotaOver", "cuotaUnder", "dineroOver", "dineroUnder", "eventoId", "overUnder" },
+                values: new object[] { 100, 1.8999999999999999, 1.8999999999999999, 50.0, 50.0, 1, 1.5 });
 
             migrationBuilder.InsertData(
                 table: "Apuesta",
                 columns: new[] { "apuestaId", "cuota", "dineroApuesta", "eventoId", "fecha", "mercadoId", "tipoApuesta", "tipoMercado", "usuarioId" },
-                values: new object[] { 12, 1.8999999999999999, 20.0, 1, new DateTime(2020, 12, 11, 13, 22, 41, 994, DateTimeKind.Local).AddTicks(4771), 100, "over", 1.5, "adriperez@gmail.com" });
+                values: new object[] { 12, 1.8999999999999999, 20.0, 1, new DateTime(2020, 12, 11, 15, 6, 26, 375, DateTimeKind.Local).AddTicks(6577), 100, "over", 1.5, "adriperez@gmail.com" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Apuesta_eventoId",

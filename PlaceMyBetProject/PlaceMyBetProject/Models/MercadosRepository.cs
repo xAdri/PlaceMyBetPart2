@@ -25,5 +25,12 @@ namespace PlaceMyBetProject.Models
                 return mercado;
             }
         }
+
+        internal void Save(Mercado m)
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            context.Mercado.Add(m);
+            context.SaveChanges();
+        }
     }
 }

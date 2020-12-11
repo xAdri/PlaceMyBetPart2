@@ -64,7 +64,7 @@ namespace PlaceMyBetProject.Migrations
                             cuota = 1.8999999999999999,
                             dineroApuesta = 20.0,
                             eventoId = 1,
-                            fecha = new DateTime(2020, 12, 11, 13, 22, 41, 994, DateTimeKind.Local).AddTicks(4771),
+                            fecha = new DateTime(2020, 12, 11, 15, 6, 26, 375, DateTimeKind.Local).AddTicks(6577),
                             mercadoId = 100,
                             tipoApuesta = "over",
                             tipoMercado = 1.5,
@@ -119,7 +119,7 @@ namespace PlaceMyBetProject.Migrations
                         new
                         {
                             eventoId = 1,
-                            fecha = new DateTime(2020, 12, 11, 13, 22, 41, 962, DateTimeKind.Local).AddTicks(4938),
+                            fecha = new DateTime(2020, 12, 11, 15, 6, 26, 365, DateTimeKind.Local).AddTicks(6649),
                             local = "Valencia",
                             visitante = "Levante"
                         });
@@ -129,9 +129,6 @@ namespace PlaceMyBetProject.Migrations
                 {
                     b.Property<int>("mercadoId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("apuestaId")
                         .HasColumnType("int");
 
                     b.Property<double>("cuotaOver")
@@ -162,11 +159,10 @@ namespace PlaceMyBetProject.Migrations
                         new
                         {
                             mercadoId = 100,
-                            apuestaId = 0,
-                            cuotaOver = 50.0,
-                            cuotaUnder = 50.0,
-                            dineroOver = 1.8999999999999999,
-                            dineroUnder = 1.8999999999999999,
+                            cuotaOver = 1.8999999999999999,
+                            cuotaUnder = 1.8999999999999999,
+                            dineroOver = 50.0,
+                            dineroUnder = 50.0,
                             eventoId = 1,
                             overUnder = 1.5
                         });
