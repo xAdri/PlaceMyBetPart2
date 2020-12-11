@@ -62,5 +62,17 @@ namespace PlaceMyBetProject.Models
             context.Apuesta.Add(a);
             context.SaveChanges();
         }
+
+        public static ApuestaDTO ToDTO(Apuesta a)
+        {
+            return new ApuestaDTO(a.usuarioId, a.eventoId, a.tipoApuesta, a.cuota, a.dineroApuesta);
+        }
+
+        public List<ApuestaDTO> RetrieveDTO()
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            List<ApuestaDTO> apuestas = context.Apuesta.Select(m => ToDTO(m)).ToList();
+            return apuestas;
+        }
     }
 }

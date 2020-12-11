@@ -38,4 +38,26 @@ namespace PlaceMyBetProject.Models
         {
         }
     }
+
+    public class ApuestaDTO
+    {
+        public string usuarioId { get; set; }
+        public int eventoId { get; set; }
+        public string tipoApuesta { get; set; }
+        public double cuota { get; set; }
+        public double dineroApuesta { get; set; }
+
+        public ApuestaDTO(string usuarioId, int eventoId, string tipoApuesta, double cuota, double dineroApuesta)
+        {
+            this.usuarioId = usuarioId;
+            this.eventoId = eventoId;
+            this.tipoApuesta = tipoApuesta;
+            this.cuota = cuota;
+            this.dineroApuesta = dineroApuesta;
+        }
+
+        public ApuestaDTO()
+        {
+        }
+    }
 }
