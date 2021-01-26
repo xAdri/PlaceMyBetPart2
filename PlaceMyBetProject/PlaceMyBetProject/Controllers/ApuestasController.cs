@@ -19,11 +19,18 @@ namespace PlaceMyBetProject.Controllers
         }
 
         // GET: api/Apuestas/5
-        public Apuesta Get(int id)
+        /*public Apuesta Get(int id)
         {
             var repo = new ApuestasRepository();
             Apuesta apuesta = repo.RetrieveId(id);
             return apuesta;
+        }*/
+
+        public int Get(int idMercado)
+        {
+            var repo = new ApuestasRepository();
+            int apuestaId = repo.RetrieveIdMercado(idMercado);
+            return apuestaId;
         }
 
         // POST: api/Apuestas

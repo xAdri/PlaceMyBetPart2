@@ -27,6 +27,28 @@ namespace PlaceMyBetProject.Models
             }
         }
 
+        internal int RetrieveIdMercado(int idMercado)
+        {
+            using (PlaceMyBetContext context = new PlaceMyBetContext())
+            {
+                Apuesta apuesta = context.Apuesta.FirstOrDefault(a => a.mercadoId == idMercado);
+                int idApuesta = apuesta.apuestaId;
+                return idApuesta;
+            }
+        }
+
+        /*
+        // Esta es la que estaba intentando para devolver la lista de apuestas con los Ids
+        internal List<Apuesta> RetrieveIdMercado(int idMercado)
+        {
+            List<Apuesta> apuestas = new List<Apuesta>();
+            using (PlaceMyBetContext context = new PlaceMyBetContext())
+            {
+                context.Apuesta.Include(a => a.mercadoId == idMercado).ToList();
+                return apuestas;
+            }
+        }*/
+
         internal void Save(Apuesta a)
         {
             // Recuperar mercado con el mismo ID de apuesta para hacer
